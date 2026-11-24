@@ -1,0 +1,28 @@
+package TechstoreTp5;
+
+public class ComposantStockage extends Article implements Garantissable {
+    private int capacite;
+
+    public ComposantStockage(int id, String nom, String reference, double prix, int capacite) {
+        super(id, nom, reference, prix);
+        this.capacite = capacite;
+    }
+
+    @Override
+    public int garantirAppareil() {
+        return (capacite <= 500) ? 1 : 2;
+    }
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public void setCapacite(int capacite) {
+        this.capacite = capacite;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", capacite=" + capacite;
+    }
+}
